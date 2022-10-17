@@ -1,0 +1,65 @@
+#Boolean network model of Drosophila 4-cell parasegment
+#From Albert R, Othmer H (2003) 
+#The topology of the regulatory interactions predicts the expression pattern of the segment polarity genes in drosophila melanogaster. 
+#J Theor Biol 223: 1–18.
+#BOOLEAN RULES
+SLP_P1*=SLP_P1
+wg_P1*=(CIA_P1 and SLP_P1 and not CIR_P1) or (wg_P1 and (CIA_P1 or SLP_P1) and not CIR_P1)
+WG_P1*=wg_P1
+en_P1*=(WG_P4 or WG_P2) and not SLP_P1
+EN_P1*=en_P1
+hh_P1*=EN_P1 and not CIR_P1
+HH_P1*=hh_P1
+ptc_P1*=CIA_P1 and not EN_P1 and not CIR_P1
+PTC_P1*=ptc_P1 or (PTC_P1 and not HH_P4 and not HH_P2)
+PH_P1*=PTC_P1 and (HH_P4 or HH_P2)
+SMO_P1*=not PTC_P1 or (HH_P4 or HH_P2)
+ci_P1*=not EN_P1
+CI_P1*=ci_P1
+CIA_P1*=CI_P1 and (not PTC_P1 or hh_P4 or hh_P2 or HH_P4 or HH_P2)
+CIR_P1*=CI_P1 and PTC_P1 and not hh_P4 and not hh_P2 and not HH_P4 and not HH_P2
+SLP_P2*=SLP_P2
+wg_P2*=(CIA_P2 and SLP_P2 and not CIR_P2) or (wg_P2 and (CIA_P2 or SLP_P2) and not CIR_P2)
+WG_P2*=wg_P2
+en_P2*=(WG_P1 or WG_P3) and not SLP_P2
+EN_P2*=en_P2
+hh_P2*=EN_P2 and not CIR_P2
+HH_P2*=hh_P2
+ptc_P2*=CIA_P2 and not EN_P2 and not CIR_P2
+PTC_P2*=ptc_P2 or (PTC_P2 and not HH_P1 and not HH_P3)
+PH_P2*=PTC_P2 and (HH_P1 or HH_P3)
+SMO_P2*=not PTC_P2 or (HH_P1 or HH_P3)
+ci_P2*=not EN_P2
+CI_P2*=ci_P2
+CIA_P2*=CI_P2 and (not PTC_P2 or hh_P1 or hh_P3 or HH_P1 or HH_P3)
+CIR_P2*=CI_P2 and PTC_P2 and not hh_P1 and not hh_P3 and not HH_P1 and not HH_P3
+SLP_P3*=SLP_P3
+wg_P3*=(CIA_P3 and SLP_P3 and not CIR_P3) or (wg_P3 and (CIA_P3 or SLP_P3) and not CIR_P3)
+WG_P3*=wg_P3
+en_P3*=(WG_P2 or WG_P4) and not SLP_P3
+EN_P3*=en_P3
+hh_P3*=EN_P3 and not CIR_P3
+HH_P3*=hh_P3
+ptc_P3*=CIA_P3 and not EN_P3 and not CIR_P3
+PTC_P3*=ptc_P3 or (PTC_P3 and not HH_P2 and not HH_P4)
+PH_P3*=PTC_P3 and (HH_P2 or HH_P4)
+SMO_P3*=not PTC_P3 or (HH_P2 or HH_P4)
+ci_P3*=not EN_P3
+CI_P3*=ci_P3
+CIA_P3*=CI_P3 and (not PTC_P3 or hh_P2 or hh_P4 or HH_P2 or HH_P4)
+CIR_P3*=CI_P3 and PTC_P3 and not hh_P2 and not hh_P4 and not HH_P2 and not HH_P4
+SLP_P4*=SLP_P4
+wg_P4*=(CIA_P4 and SLP_P4 and not CIR_P4) or (wg_P4 and (CIA_P4 or SLP_P4) and not CIR_P4)
+WG_P4*=wg_P4
+en_P4*=(WG_P3 or WG_P1) and not SLP_P4
+EN_P4*=en_P4
+hh_P4*=EN_P4 and not CIR_P4
+HH_P4*=hh_P4
+ptc_P4*=CIA_P4 and not EN_P4 and not CIR_P4
+PTC_P4*=ptc_P4 or (PTC_P4 and not HH_P3 and not HH_P1)
+PH_P4*=PTC_P4 and (HH_P3 or HH_P1)
+SMO_P4*=not PTC_P4 or (HH_P3 or HH_P1)
+ci_P4*=not EN_P4
+CI_P4*=ci_P4
+CIA_P4*=CI_P4 and (not PTC_P4 or hh_P3 or hh_P1 or HH_P3 or HH_P1)
+CIR_P4*=CI_P4 and PTC_P4 and not hh_P3 and not hh_P1 and not HH_P3 and not HH_P1
